@@ -76,9 +76,16 @@ return [
         'default' => [
             'query' => [
                 // ExampleQuery::class,
+                'product' => App\GraphQL\Queries\ProductQuery::class,
+                'products' => App\GraphQL\Queries\ListProductQuery::class,
+                'user' => App\GraphQL\Queries\UserQuery::class,
+                'users' => App\GraphQL\Queries\UsersQuery::class,
             ],
             'mutation' => [
                 // ExampleMutation::class,
+                'newProduct' => App\GraphQL\Mutations\NewProductMutation::class,
+                'updateProduct' => App\GraphQL\Mutations\UpdateProductMutation::class,
+                'deleteProduct' => App\GraphQL\Mutations\DeleteProductMutation::class,
             ],
             // The types only available in this schema
             'types' => [
@@ -109,6 +116,8 @@ return [
         // ExampleType::class,
         // ExampleRelationType::class,
         // \Rebing\GraphQL\Support\UploadType::class,
+        'Product' => App\GraphQL\Types\ProductType::class,
+        'User' => App\GraphQL\Types\UserType::class,
     ],
 
     // The types will be loaded on demand. Default is to load all types on each request
